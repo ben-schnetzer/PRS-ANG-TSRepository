@@ -1,0 +1,19 @@
+<div class="p-4">
+  <span class="component-title">{{ title }}</span>
+  <p *ngIf="!vendor">Loading...</p>
+  <div >
+    <main class="single">
+      <table class="table table-sm">
+        <tr><td>Code:</td><td><input [(ngModel)]="vendor.code" type="text" /></td></tr>
+        <tr><td>Name:</td><td><input [(ngModel)]="vendor.name" type="text" /></td></tr>
+        <tr><td>Address:</td><td><input [(ngModel)]="vendor.address" type="text" /></td></tr>
+        <tr><td>City:</td><td><input [(ngModel)]="vendor.city" type="text" /></td></tr>
+        <tr><td>State:</td><td><input [(ngModel)]="vendor.state" type="text" /></td></tr>
+        <tr><td>Zip:</td><td><input [(ngModel)]="vendor.zip" type="text" /></td></tr>
+        <tr><td>Phone:</td><td><input [(ngModel)]="vendor.phoneNumber" type="text" /></td></tr>
+        <tr><td>Email:</td><td><input [(ngModel)]="vendor.email" type="email" /></td></tr>
+      </table>
+    </main>
+    <button (click)="save()" class="btn btn-sm btn-primary">Save</button>
+  </div>
+</div>

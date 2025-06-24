@@ -1,0 +1,21 @@
+<!--<h2>Request: {{ request }}</h2>
+<p>Description: {{ request.description }}</p>
+<p>Status: {{ request.status }} | Total: ${{ request.total }}</p>
+
+<a [routerLink]="['/line-item-create', request.id]">
+  <img src="images/add-icon.png" title="Add Line Item" />
+</a>
+
+<table *ngIf="lineItems.length > 0">
+  <tr><th>Product</th><th>Quantity</th><th>Actions</th></tr>
+  <tr *ngFor="let li of lineItems">
+    <td>{{ li.product.name }}</td>
+    <td>{{ li.quantity }}</td>
+    <td>
+      <a [routerLink]="['/line-item-edit', li.id]"></a>
+      <a (click)="deleteLineItem(li.id)"></a>
+    </td>
+  </tr>
+</table>
+
+<p *ngIf="lineItems.length === 0">No line items yet. Add some!</p> -->

@@ -1,0 +1,19 @@
+<div class="p-4">
+  <span class="component-title">{{ title }}</span>
+  <p *ngIf="!user">Loading...</p>
+  <div *ngIf="user">
+    <main class="single">
+      <table class="table table-sm">
+        <tr><td>Username:</td><td><input [(ngModel)]="user.username" type="text" /></td></tr>
+        <tr><td>Password:</td><td><input [(ngModel)]="user.password" type="password" /></td></tr>
+        <tr><td>First Name:</td><td><input [(ngModel)]="user.firstName" type="text" /></td></tr>
+        <tr><td>Last Name:</td><td><input [(ngModel)]="user.lastName" type="text" /></td></tr>
+        <tr><td>Phone:</td><td><input [(ngModel)]="user.phoneNumber" type="text" /></td></tr>
+        <tr><td>Email:</td><td><input [(ngModel)]="user.email" type="email" /></td></tr>
+        <tr><td>Reviewer:</td><td><input [(ngModel)]="user.reviewer" type="checkbox" /></td></tr>
+        <tr><td>Admin:</td><td><input [(ngModel)]="user.admin" type="checkbox" /></td></tr>
+      </table>
+    </main>
+    <button (click)="save()" class="btn btn-sm btn-primary">Save</button>
+  </div>
+</div>

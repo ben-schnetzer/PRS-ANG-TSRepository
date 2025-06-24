@@ -1,0 +1,17 @@
+<div class="p-4">
+  <span class="component-title">{{ title }}</span>
+  <p *ngIf="!product">Loading...</p>
+  <div *ngIf="product">
+    <main class="single">
+      <table class="table table-sm">
+        <tr><td>Vendor ID:</td><td><input [(ngModel)]="product.vendor" type="number" /></td></tr>
+        <tr><td>Part Number:</td><td><input [(ngModel)]="product.partNumber" type="text" /></td></tr>
+        <tr><td>Name:</td><td><input [(ngModel)]="product.name" type="text" /></td></tr>
+        <tr><td>Price:</td><td><input [(ngModel)]="product.price" type="number" step="0.01" /></td></tr>
+        <tr><td>Unit:</td><td><input [(ngModel)]="product.unit" type="text" /></td></tr>
+        <tr><td>Photo Path:</td><td><input [(ngModel)]="product.photoPath" type="text" /></td></tr>
+      </table>
+    </main>
+    <button (click)="save()" class="btn btn-sm btn-primary">Save</button>
+  </div>
+</div>

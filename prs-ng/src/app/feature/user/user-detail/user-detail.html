@@ -1,0 +1,23 @@
+<div *ngIf="user" class="component">
+  <section class="heading">
+    <span class="page-title font-weight-bold font-italic">{{ title }}</span>
+    <span> | <a routerLink="/user-list">Return to List</a></span>
+  </section>
+  <main class="single">
+    <table class="table table-sm">
+      <tr><td>ID</td><td>{{ user.id }}</td></tr>
+      <tr><td>Username:</td><td><input [(ngModel)]="user.username" type="text" disabled /></td></tr>
+      <tr><td>First Name:</td><td><input [(ngModel)]="user.firstName" type="text" disabled /></td></tr>
+      <tr><td>Last Name:</td><td><input [(ngModel)]="user.lastName" type="text" disabled /></td></tr>
+      <tr><td>Phone:</td><td><input [(ngModel)]="user.phoneNumber" type="text" disabled /></td></tr>
+      <tr><td>Email:</td><td><input [(ngModel)]="user.email" type="email" disabled /></td></tr>
+      <tr><td>Reviewer:</td><td><input [(ngModel)]="user.reviewer" type="checkbox" disabled /></td></tr>
+      <tr><td>Admin:</td><td><input [(ngModel)]="user.admin" type="checkbox" disabled /></td></tr>
+    </table>
+  </main>
+  <span>
+    <a routerLink="/user-edit/{{ user.id }}" class="btn btn-sm btn-warning">Edit</a>
+    |
+    <button (click)="delete()" class="btn btn-sm btn-danger">Delete</button>
+  </span>
+</div>

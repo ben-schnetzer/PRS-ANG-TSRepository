@@ -1,0 +1,21 @@
+<div class="p-4">
+  <span class="component-title">{{ title }}</span>
+  <p *ngIf="!request">Loading...</p>
+  <div *ngIf="request">
+    <main class="single">
+      <table class="table table-sm">
+        <tr><td>User ID:</td><td><input [(ngModel)]="request.user" type="number" /></td></tr>
+        <tr><td>Request #:</td><td><input [(ngModel)]="request.requestNumber" type="text" /></td></tr>
+        <tr><td>Description:</td><td><input [(ngModel)]="request.description" type="text" /></td></tr>
+        <tr><td>Justification:</td><td><input [(ngModel)]="request.justification" type="text" /></td></tr>
+        <tr><td>Date Needed:</td><td><input [(ngModel)]="request.dateNeeded" type="date" /></td></tr>
+        <tr><td>Delivery Mode:</td><td><input [(ngModel)]="request.deliveryMode" type="text" /></td></tr>
+        <tr><td>Status:</td><td><input [(ngModel)]="request.status" type="text" /></td></tr>
+        <tr><td>Total:</td><td><input [(ngModel)]="request.total" type="number" step="0.01" /></td></tr>
+        <tr><td>Submitted Date:</td><td><input [(ngModel)]="request.submittedDate" type="date" /></td></tr>
+        <tr><td>Reason for Rejection:</td><td><input [(ngModel)]="request.reasonForRejection" type="text" /></td></tr>
+      </table>
+    </main>
+    <button (click)="save()" class="btn btn-sm btn-primary">Save</button>
+  </div>
+</div>

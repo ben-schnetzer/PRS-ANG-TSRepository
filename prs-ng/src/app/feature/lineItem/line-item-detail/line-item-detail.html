@@ -1,0 +1,18 @@
+<div *ngIf="lineitem" class="component">
+  <section class="heading">
+    <span class="page-title font-weight-bold font-italic">{{ title }}</span>
+    <span> | <a routerLink="/line-item-list">Return to List</a></span>
+  </section>
+  <main class="single">
+    <table class="table table-sm">
+      <tr><td>ID:</td><td>{{ lineitem.id }}</td></tr>
+      <tr><td>Request ID:</td><td><input [(ngModel)]="lineitem.request" disabled /></td></tr>
+      <tr><td>Product ID:</td><td><input [(ngModel)]="lineitem.product" disabled /></td></tr>
+      <tr><td>Quantity:</td><td><input [(ngModel)]="lineitem.quantity" disabled /></td></tr>
+    </table>
+  </main>
+  <span>
+    <a routerLink="/line-item-edit/{{ lineitem.id }}" class="btn btn-sm btn-warning">Edit</a> |
+    <button (click)="delete()" class="btn btn-sm btn-danger">Delete</button>
+  </span>
+</div>
