@@ -1,21 +1,70 @@
-<!--<h2>Request: {{ request }}</h2>
-<p>Description: {{ request.description }}</p>
-<p>Status: {{ request.status }} | Total: ${{ request.total }}</p>
+<div *ngIf="request">
+  <div class="request-header">
+    <h2>{{ request.description }}</h2>
+    <p><strong>Status:</strong> {{ request.status }} | <strong>Total:</strong> ${{ request.total }}</p>
+  </div>
 
-<a [routerLink]="['/line-item-create', request.id]">
-  <img src="images/add-icon.png" title="Add Line Item" />
-</a>
+<div class="request-summary">
+  <a [routerLink]="['/request-list']">← Return to List</a>
 
-<table *ngIf="lineItems.length > 0">
-  <tr><th>Product</th><th>Quantity</th><th>Actions</th></tr>
-  <tr *ngFor="let li of lineItems">
-    <td>{{ li.product.name }}</td>
-    <td>{{ li.quantity }}</td>
-    <td>
-      <a [routerLink]="['/line-item-edit', li.id]"></a>
-      <a (click)="deleteLineItem(li.id)"></a>
-    </td>
-  </tr>
-</table>
+  <h2>[Purchase Request Line Items]</h2>
+  <table class="request-detail-table">
+    <thead>
+    <tr>
+      <td><strong>User</strong></td>
+      <td><strong>Description</strong></td>
+      <td><strong>Status</strong></td>
+      <td><strong>Total</strong></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{ request.user.firstName }} {{ request.user.lastName }}</td>
+      <td>{{ request.description }}</td>
+      <td>{{ request.status }}</td>
+      <td>${{ request.total.toFixed(2) }}</td>
+    </tr>
+    </tbody>
 
-<p *ngIf="lineItems.length === 0">No line items yet. Add some!</p> -->
+  </table>
+</div>
+
+<div class="line-items-header">
+  <h3 style="display: inline;">Line Items</h3>
+  <a [routerLink]="['/line-item-create', request.id]">
+    <img src="images/add-icon.png" width="20" height="20" title="Add Line Item" />
+  </a>
+</div>
+
+  <table *ngIf="lineItems.length > 0" class="line-items-table">
+    <thead>
+      <tr>
+        <th>Vendor</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Line Total</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let li of lineItems">
+  <td>{{ li.product.vendor.name }}</td>
+  <td>{{ li.product.name }}</td>
+  <td>{{ li.quantity }}</td>
+  <td>${{ li.product.price }}</td>
+  <td>${{ li.product.price * li.quantity }}</td>
+  <td>
+    <a [routerLink]="['/line-item-edit', li.id]">
+      <img src="images/pencil-icon.png" width="20" height="20" title="Edit Line Item" />
+    </a> |
+    <a (click)="deleteLineItem(li.id)">
+      <img src="images/delete.jpg" width="20" height="20" title="Delete Line Item" />
+    </a>
+  </td>
+</tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="lineItems.length === 0" class="empty-msg">No line items yet. Add some!</p>
+</div>

@@ -65,7 +65,7 @@ import { RequestLine } from './feature/request/request-line/request-line';
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideZonelessChangeDetection(),
+    //provideZonelessChangeDetection(),
     provideHttpClient(withInterceptorsFromDi())
   ],
   bootstrap: [App]

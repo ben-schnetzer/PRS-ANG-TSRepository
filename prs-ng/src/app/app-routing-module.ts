@@ -23,6 +23,7 @@ import { LineItemEdit } from './feature/lineItem/line-item-edit/line-item-edit';
 import { LineItemDetail } from './feature/lineItem/line-item-detail/line-item-detail';
 import { UserLogin } from './feature/user-login/user-login';
 import { Home } from './feature/home/home';
+import { RequestLine } from './feature/request/request-line/request-line';
 
 
 const routes: Routes = [
@@ -43,8 +44,10 @@ const routes: Routes = [
   { path: 'request-create', component: RequestCreate },
   { path: 'request-edit/:id', component: RequestEdit },
   { path: 'request-detail/:id', component: RequestDetail },
+  { path: 'request-line/:id', component: RequestLine },
   { path: 'line-item-list', component: LineItemList },
   { path: 'line-item-create', component: LineItemCreate },
+  { path: 'line-item-create/:id', component: LineItemCreate },
   { path: 'line-item-edit/:id', component: LineItemEdit },
   { path: 'line-item-detail/:id', component: LineItemDetail },
   { path: 'user-login', component: UserLogin },

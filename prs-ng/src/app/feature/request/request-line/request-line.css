@@ -1,0 +1,85 @@
+/* Top header section */
+.request-header {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+/* Request summary & navigation */
+.request-summary {
+  margin-bottom: 1.5rem;
+}
+
+.request-summary a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #007bff;
+}
+
+/* Match request-detail-table to line-items-table */
+.request-detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+.line-items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.request-detail-table th,
+.request-detail-table td{
+  border: 1px solid #ddd;
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+.line-items-table th,
+.line-items-table td {
+  border: 1px solid #ddd;
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.request-detail-table th{
+  background-color: #f4f4f4;
+  font-weight: 600;
+}
+.line-items-table th {
+  background-color: #f4f4f4;
+  font-weight: 600;
+}
+
+/* Line items section header */
+.line-items-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.line-items-header h3 {
+  margin: 0;
+}
+
+/* Message for when there are no line items */
+.empty-msg {
+  font-style: italic;
+  color: #888;
+  margin-top: 1rem;
+}
+
+/* Reusable button/icon styles */
+.request-summary img,
+.line-items-table img {
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}

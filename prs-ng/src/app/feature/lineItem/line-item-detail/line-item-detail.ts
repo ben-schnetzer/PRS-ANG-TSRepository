@@ -37,10 +37,12 @@ export class LineItemDetail implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  delete() {
-    this.lineitemSvc.delete(this.lineitemId).subscribe({
-      next: () => this.router.navigateByUrl('/line-item-list'),
-      error: (err) => console.log(err)
-    });
-  }
+delete() {
+  const requestId = this.lineitem.request.id;
+  this.lineitemSvc.delete(this.lineitemId).subscribe({
+    next: () => this.router.navigateByUrl(`/request-line/${requestId}`),
+    error: (err) => console.log(err)
+  });
+}
+
 }

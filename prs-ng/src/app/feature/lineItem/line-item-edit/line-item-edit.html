@@ -1,14 +1,28 @@
 <div class="p-4">
-  <span class="component-title">{{ title }}</span>
+  <h1>{{ title }}</h1>
   <p *ngIf="!lineitem">Loading...</p>
-  <div *ngIf="lineitem">
-    <main class="single">
-      <table class="table table-sm">
-        <tr><td>Request ID:</td><td><input [(ngModel)]="lineitem.request" type="number" /></td></tr>
-        <tr><td>Product ID:</td><td><input [(ngModel)]="lineitem.product" type="number" /></td></tr>
-        <tr><td>Quantity:</td><td><input [(ngModel)]="lineitem.quantity" type="number" /></td></tr>
-      </table>
-    </main>
-    <button (click)="save()" class="btn btn-sm btn-primary">Save</button>
+
+  <div *ngIf="lineitem && lineitem.request && lineitem.product">
+    <table>
+      <tr>
+        <td>Request:</td>
+        <td>{{ lineitem.request.description }}</td> <!-- read-only -->
+      </tr>
+      <tr>
+        <td>Product:</td>
+        <td>
+          <select [(ngModel)]="lineitem.product" [ngModelOptions]="{ standalone: true }">
+            <option *ngFor="let p of products" [ngValue]="p">{{ p.name }}</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Quantity:</td>
+        <td>
+          <input type="number" [(ngModel)]="lineitem.quantity" />
+        </td>
+      </tr>
+    </table>
+    <button (click)="save()">Save</button>
   </div>
 </div>

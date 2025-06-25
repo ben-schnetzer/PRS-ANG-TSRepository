@@ -1,9 +1,24 @@
 <div class="p-4">
   <h1>{{ title }}</h1>
   <table>
-    <tr><td>Request ID:</td><td><input [(ngModel)]="newLineItem.request" type="number" /></td></tr>
-    <tr><td>Product ID:</td><td><input [(ngModel)]="newLineItem.product" type="number" /></td></tr>
-    <tr><td>Quantity:</td><td><input [(ngModel)]="newLineItem.quantity" type="number" /></td></tr>
+    <tr>
+      <td>Request:</td>
+      <td>{{ newLineItem.request.description }}</td>
+    </tr>
+    <tr>
+      <td>Product:</td>
+      <td>
+        <select [(ngModel)]="newLineItem.product" [ngModelOptions]="{ standalone: true }">
+          <option *ngFor="let p of products" [ngValue]="p">{{ p.name }}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Quantity:</td>
+      <td>
+        <input type="number" [(ngModel)]="newLineItem.quantity" />
+      </td>
+    </tr>
   </table>
-  <button (click)="addlineItem()">Add Line Item</button>
+  <button (click)="addLineItem()">Add Line Item</button>
 </div>

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LineItem } from '../model/line-item';
 import { Observable } from 'rxjs';
+import { LineItemDTO } from '../model/line-item-dto';
 
 const URL = "http://localhost:8080/api/LineItems";
 
@@ -9,6 +10,9 @@ const URL = "http://localhost:8080/api/LineItems";
   providedIn: 'root'
 })
 export class LineItemService {
+getLinesForRequest(requestId: number): Observable<LineItem[]> {
+  return this.http.get<LineItem[]>(`${URL}/lines-for-req/${requestId}`);
+}
 
   constructor(private http: HttpClient) { }
 
