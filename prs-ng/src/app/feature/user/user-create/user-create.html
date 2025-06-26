@@ -1,5 +1,5 @@
 <div class="p-4">
-  <h1>{{ title }}</h1>
+  <h1>[{{ title }}]</h1> <a [routerLink]="['/user-list']">← Return to List</a>
   <table>
     <tr><td>Username:</td><td><input [(ngModel)]="newUser.username" type="text" /></td></tr>
     <tr><td>Password:</td><td><input [(ngModel)]="newUser.password" type="password" /></td></tr>

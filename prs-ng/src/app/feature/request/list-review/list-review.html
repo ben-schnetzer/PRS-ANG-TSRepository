@@ -1,21 +1,26 @@
-<h2>[Reviewable Requests]</h2>
-<table>
+<h2>[Request-Review]</h2>
+<table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th>ID</th>
+      <th>User</th>
       <th>Description</th>
+      <th>Status</th>
       <th>Total</th>
+      <th>Submitted Date</th>
       <th>Action</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let req of requests">
-      <td>{{ req.id }}</td>
+      <td>{{ req.user.firstName }} {{ req.user.lastName }}</td>
       <td>{{ req.description }}</td>
+      <td>{{ req.status }}</td>
       <td>${{ req.total }}</td>
+      <td>{{ req.submittedDate }}</td>
       <td>
         <a [routerLink]="['/approve', req.id]">
-          <img src="images/review.png" title="Review Request" />
+          <img src="images/review.png" title="Review Request" width="40" height="40"
+/>
         </a>
       </td>
     </tr>

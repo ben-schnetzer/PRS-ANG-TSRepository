@@ -4,7 +4,7 @@
   <p><strong>Total:</strong> ${{ request.total }}</p>
   <p><strong>Status:</strong> {{ request.status }}</p>
 
-  <!-- Only show if the logged-in user is a reviewer -->
+  <!-- Approve and Reject only show if the logged-in user is a Reviewer -->
   <div *ngIf="sysSvc.loggedInUser?.reviewer" style="margin-top: 2rem;">
     <textarea [(ngModel)]="reason" placeholder="Reason for rejection..." rows="3"></textarea>
 

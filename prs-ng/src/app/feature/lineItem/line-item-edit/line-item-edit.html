@@ -1,5 +1,6 @@
 <div class="p-4">
-  <h1>{{ title }}</h1>
+  <h1>[{{ title }}]</h1>
+  <a [routerLink]="['/line-item-list']">← Return to List</a>
   <p *ngIf="!lineitem">Loading...</p>
 
   <div *ngIf="lineitem && lineitem.request && lineitem.product">

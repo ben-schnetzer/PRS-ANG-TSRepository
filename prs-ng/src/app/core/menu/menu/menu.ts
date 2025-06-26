@@ -19,13 +19,12 @@ export class Menu {
       new MenuItem('Vendor', '/vendor-list', 'Vendor List'),
       new MenuItem('Product', '/product-list', 'Product List'),
       new MenuItem('Request', '/request-list', 'Request List'),
-      new MenuItem('LineItem', '/line-item-list', 'Line Item List'),
       new MenuItem('Login', '/user-login', 'User Login')
     ];
 
     const userId = this.sysSvc.loggedInUser?.id;
 
-    // If logged in, insert "Review" before "Login"
+
     if (userId) {
       items.splice(5, 0, new MenuItem('Review', `/list-review/${userId}`, 'Review List'));
     }

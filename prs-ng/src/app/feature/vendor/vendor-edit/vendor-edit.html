@@ -1,7 +1,9 @@
 <div class="p-4">
   <span class="component-title">{{ title }}</span>
+
   <p *ngIf="!vendor">Loading...</p>
-  <div >
+
+  <div *ngIf="vendor">
     <main class="single">
       <table class="table table-sm">
         <tr><td>Code:</td><td><input [(ngModel)]="vendor.code" type="text" /></td></tr>

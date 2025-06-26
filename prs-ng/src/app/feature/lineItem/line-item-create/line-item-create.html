@@ -1,10 +1,6 @@
 <div class="p-4">
-  <h1>{{ title }}</h1>
+  <h1>[{{ title }}] PR ID: {{ newLineItem.request.id }}</h1> <a [routerLink]="['/line-item-list']">← Return to List</a>
   <table>
-    <tr>
-      <td>Request:</td>
-      <td>{{ newLineItem.request.description }}</td>
-    </tr>
     <tr>
       <td>Product:</td>
       <td>

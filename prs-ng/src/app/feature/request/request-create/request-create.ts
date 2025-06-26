@@ -24,9 +24,12 @@ export class RequestCreate implements OnInit, OnDestroy {
     this.newRequest.user = this.sysSvc.loggedInUser;
   }
 
-  ngOnDestroy(): void {
+ngOnDestroy(): void {
+  if (this.subscription) {
     this.subscription.unsubscribe();
   }
+}
+
 
   addrequest() {
     this.subscription = this.requestSvc.add(this.newRequest).subscribe({

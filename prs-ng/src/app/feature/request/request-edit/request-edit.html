@@ -1,5 +1,6 @@
 <div class="p-4">
-  <span class="component-title">{{ title }}</span>
+  <span class="component-title">[{{ title }}]</span>
+  <a [routerLink]="['/request-list']">← Return to List</a>
   <p *ngIf="!request">Loading...</p>
   <div *ngIf="request">
     <main class="single">

@@ -1,5 +1,5 @@
 <div class="p-4">
-  <h1>{{ title }}</h1>
+  <h1>[{{ title }}]</h1> <a [routerLink]="['/vendor-list']">← Return to List</a>
   <table>
     <tr><td>Code:</td><td><input [(ngModel)]="newVendor.code" type="text" /></td></tr>
     <tr><td>Name:</td><td><input [(ngModel)]="newVendor.name" type="text" /></td></tr>

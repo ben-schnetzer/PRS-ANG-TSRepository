@@ -19,9 +19,12 @@ export class ProductCreate implements OnInit, OnDestroy {
 
   ngOnInit(): void {}
 
-  ngOnDestroy(): void {
+ngOnDestroy(): void {
+  if (this.subscription) {
     this.subscription.unsubscribe();
   }
+}
+
 
   addproduct() {
     this.subscription = this.productSvc.add(this.newProduct).subscribe({

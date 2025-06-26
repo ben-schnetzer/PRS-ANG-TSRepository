@@ -19,9 +19,12 @@ export class UserCreate implements OnInit, OnDestroy {
 
   ngOnInit(): void {}
 
-  ngOnDestroy(): void {
+ngOnDestroy(): void {
+  if (this.subscription) {
     this.subscription.unsubscribe();
   }
+}
+
 
   adduser() {
     this.subscription = this.userSvc.add(this.newUser).subscribe({

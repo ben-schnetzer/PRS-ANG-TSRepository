@@ -19,9 +19,12 @@ export class VendorCreate implements OnInit, OnDestroy {
 
   ngOnInit(): void {}
 
-  ngOnDestroy(): void {
+ngOnDestroy(): void {
+  if (this.subscription) {
     this.subscription.unsubscribe();
   }
+}
+
 
   addvendor() {
     this.subscription = this.vendorSvc.add(this.newVendor).subscribe({

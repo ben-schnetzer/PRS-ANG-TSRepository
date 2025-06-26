@@ -1,13 +1,7 @@
 <div *ngIf="request">
-  <div class="request-header">
-    <h2>{{ request.description }}</h2>
-    <p><strong>Status:</strong> {{ request.status }} | <strong>Total:</strong> ${{ request.total }}</p>
-  </div>
-
 <div class="request-summary">
-  <a [routerLink]="['/request-list']">← Return to List</a>
 
-  <h2>[Purchase Request Line Items]</h2>
+  <h2>[Purchase Request Line Items]</h2> <a [routerLink]="['/request-list']">← Return to List</a>
   <table class="request-detail-table">
     <thead>
     <tr>
