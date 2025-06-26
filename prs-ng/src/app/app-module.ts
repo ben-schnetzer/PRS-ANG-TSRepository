@@ -29,6 +29,10 @@ import { Menu } from './core/menu/menu/menu';
 import { NotFound } from './core/not-found/not-found/not-found';
 import { UserLogin } from './feature/user-login/user-login';
 import { RequestLine } from './feature/request/request-line/request-line';
+import { SubmitReview } from './feature/request/submit-review/submit-review';
+import { ListReview } from './feature/request/list-review/list-review';
+import { Approve } from './feature/request/approve/approve';
+import { Reject } from './feature/request/reject/reject';
 
 @NgModule({
   declarations: [
@@ -56,11 +60,15 @@ import { RequestLine } from './feature/request/request-line/request-line';
     Menu,
     NotFound,
     UserLogin,
-    RequestLine
+    RequestLine,
+    SubmitReview,
+    Reject
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ListReview,
+    Approve,
     FormsModule
   ],
   providers: [

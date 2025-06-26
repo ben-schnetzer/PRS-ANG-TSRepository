@@ -44,7 +44,7 @@ export class UserLogin implements OnInit, OnDestroy {
         // successful login
         this.sysSvc.loggedInUser = resp;
         // nav to movie-list
-        this.router.navigateByUrl('/user-list');
+        this.router.navigateByUrl('/home');
       },
       error: (err) => {
         // unsuccessful login

@@ -1,0 +1,28 @@
+<div *ngIf="request">
+  <h2>Review Request: {{ request.id }}</h2>
+  <p><strong>Description:</strong> {{ request.description }}</p>
+  <p><strong>Total:</strong> ${{ request.total }}</p>
+  <p><strong>Status:</strong> {{ request.status }}</p>
+
+  <!-- Only show if the logged-in user is a reviewer -->
+  <div *ngIf="sysSvc.loggedInUser?.reviewer" style="margin-top: 2rem;">
+    <textarea [(ngModel)]="reason" placeholder="Reason for rejection..." rows="3"></textarea>
+
+    <p *ngIf="!reason.trim()" style="font-style: italic; color: gray;">
+      Enter a reason to enable rejection
+    </p>
+
+    <button 
+      (click)="approve()" 
+      style="background-color: green; color: white; padding: 8px 16px; margin-right: 10px;">
+      Approve
+    </button>
+
+    <button 
+      *ngIf="reason.trim()"
+      (click)="reject()" 
+      style="background-color: crimson; color: white; padding: 8px 16px;">
+      Reject
+    </button>
+  </div>
+</div>

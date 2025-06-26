@@ -1,0 +1,23 @@
+<h2>[Reviewable Requests]</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Description</th>
+      <th>Total</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let req of requests">
+      <td>{{ req.id }}</td>
+      <td>{{ req.description }}</td>
+      <td>${{ req.total }}</td>
+      <td>
+        <a [routerLink]="['/approve', req.id]">
+          <img src="images/review.png" title="Review Request" />
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

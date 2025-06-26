@@ -30,7 +30,7 @@
 </div>
 
 <div class="line-items-header">
-  <h3 style="display: inline;">Line Items</h3>
+  <h3 style="display: inline;">[Line Items]</h3>
   <a [routerLink]="['/line-item-create', request.id]">
     <img src="images/add-icon.png" width="20" height="20" title="Add Line Item" />
   </a>
@@ -67,4 +67,13 @@
   </table>
 
   <p *ngIf="lineItems.length === 0" class="empty-msg">No line items yet. Add some!</p>
+  <div style="text-align: left; margin-top: 2rem;">
+  <button 
+    (click)="submitRequest()" 
+    style="background-color: #007bff; color: white; border: none; padding: 10px 20px; font-size: 1.1rem; border-radius: 4px; cursor: pointer;"
+  >
+    Submit Request
+  </button>
+</div>
+
 </div>

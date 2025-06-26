@@ -24,6 +24,10 @@ import { LineItemDetail } from './feature/lineItem/line-item-detail/line-item-de
 import { UserLogin } from './feature/user-login/user-login';
 import { Home } from './feature/home/home';
 import { RequestLine } from './feature/request/request-line/request-line';
+import { SubmitReview } from './feature/request/submit-review/submit-review';
+import { ListReview } from './feature/request/list-review/list-review';
+import { Approve } from './feature/request/approve/approve';
+import { Reject } from './feature/request/reject/reject';
 
 
 const routes: Routes = [
@@ -45,6 +49,10 @@ const routes: Routes = [
   { path: 'request-edit/:id', component: RequestEdit },
   { path: 'request-detail/:id', component: RequestDetail },
   { path: 'request-line/:id', component: RequestLine },
+  { path: 'submit-review/:id', component: SubmitReview },
+  { path: 'list-review/:id', component: ListReview },
+  { path: 'approve/:id', component: Approve },
+  { path: 'reject/:id', component: Reject },
   { path: 'line-item-list', component: LineItemList },
   { path: 'line-item-create', component: LineItemCreate },
   { path: 'line-item-create/:id', component: LineItemCreate },
