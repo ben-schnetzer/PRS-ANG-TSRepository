@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 import { Product } from '../../../model/product';
 import { ProductService } from '../../../service/product-service';
 import { Router } from '@angular/router';
+import { Vendor } from '../../../model/vendor';
+import { VendorService } from '../../../service/vendor-service';
 
 @Component({
   selector: 'app-product-create',
@@ -14,10 +16,16 @@ export class ProductCreate implements OnInit, OnDestroy {
   title: string = 'Product-Create';
   subscription!: Subscription;
   newProduct: Product = new Product();
+  vendors: Vendor[] = [];
 
-  constructor(private productSvc: ProductService, private router: Router) {}
+  constructor(private productSvc: ProductService, private vendorSvc: VendorService, private router: Router) {}
 
-  ngOnInit(): void {}
+    ngOnInit(): void {
+    this.subscription = this.vendorSvc.list().subscribe({
+      next: (vendors) => this.vendors = vendors,
+      error: (err) => console.log('Error loading vendors', err)
+    });
+  }
 
 ngOnDestroy(): void {
   if (this.subscription) {
